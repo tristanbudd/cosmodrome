@@ -4,11 +4,15 @@
 
 /* Initialise Variables */
 :root {
+    --color-primary: #0;
+    --color-secondary: #0;
     --color-white: #ffffff;
+    --color-light-grey: #f2f2f2;
+    --color-grey: #EAEAEA;
     --color-heading: #2b2b2b;
     --color-text: #575757;
     --color-text-over-dark: #cbcbcc;
-    --color-link: #394eff;
+    --color-link: #394eff; /* Make same as primary */
 }
 
 
