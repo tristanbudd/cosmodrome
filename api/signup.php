@@ -21,7 +21,7 @@ $_SESSION["page_title"] = get_lang("signup", $page_language);
         <!-- End Main Content -->
 
         <!-- Importing JavaScript -->
-        <script type="text/javascript" rel="javascript" src="../public/resource/js/global.js"></script>
+        <script type="text/javascript" rel="javascript" src="../public/js/global.js"></script>
         <!-- End Importing JavaScript -->
     </body>
 </html>
