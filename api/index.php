@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include("components/base_functions.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/api/components/base_functions.php");
 
 $page_language = get_page_language();
 
@@ -29,7 +29,7 @@ $_SESSION["page_title"] = get_lang("home", $page_language);
         <!-- End Main Content -->
 
         <!-- Importing JavaScript -->
-        <script type="text/javascript" rel="javascript" src="../public/js/global.js"></script>
+        <script type="text/javascript" rel="javascript" src="/js/global.js"></script>
         <!-- End Importing JavaScript -->
     </body>
 </html>
