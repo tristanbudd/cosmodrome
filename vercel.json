@@ -4,10 +4,22 @@
       "runtime": "vercel-php@0.7.3"
     }
   },
-  "static": {
-    "source": "/public"
-  },
   "routes": [
-    { "src": "/(.*)",  "dest": "/api/index.php" }
+    {
+      "src": "^/api/(.*)$",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "^/css/(.*)$",
+      "dest": "/public/css/$1"
+    },
+    {
+      "src": "^/js/(.*)$",
+      "dest": "/public/js/$1"
+    },
+    {
+      "src": "^(.*)$",
+      "dest": "/api/index.php"
+    }
   ]
 }
