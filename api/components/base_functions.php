@@ -41,4 +41,3 @@ function get_lang($lang_key, $lang_file) {
         return "Language file not found";
     }
 }
-?>
