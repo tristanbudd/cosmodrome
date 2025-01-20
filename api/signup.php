@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include("../resource/base_functions.php");
+include("components/base_functions.php");
 
 $page_language = get_page_language();
 
@@ -11,9 +11,8 @@ $_SESSION["page_title"] = get_lang("signup", $page_language);
 
 <!DOCTYPE html>
 <html lang="<?php echo($page_language) ?>">
-
     <!-- Importing Page Header & SEO -->
-    <?php include("../resource/head.php"); ?>
+    <?php include("components/head.php"); ?>
     <!-- End Importing Page Header & SEO -->
 
     <body>
