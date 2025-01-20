@@ -1,2 +1,2 @@
 <?php
-phpinfo();
+header('Location: ../index.php');
