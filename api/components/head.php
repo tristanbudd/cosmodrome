@@ -38,10 +38,10 @@
     <meta name="twitter:description" content="<?php echo(get_setting("website_description", "A Cosmodrome Website.")) ?>">
     <meta name="twitter:image" content="/resource/img/logo_cover.jpg">
 
-    <link rel="icon" type="image/png" href="/api/resourceurce/favicon/favicon-96x96.png" sizes="96x96"/>
-    <link rel="icon" type="image/svg+xml" href="/api/resourceurce/favicon/favicon.svg"/>
-    <link rel="shortcut icon" href="/api/resourceurce/favicon/favicon.ico"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="/api/resourceurce/favicon/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" href="../resource/favicon/favicon-96x96.png" sizes="96x96"/>
+    <link rel="icon" type="image/svg+xml" href="../resource/favicon/favicon.svg"/>
+    <link rel="shortcut icon" href="../resource/favicon/favicon.ico"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="../resource/favicon/apple-touch-icon.png"/>
 
     <meta name="copyright" content="Copyright © <?php echo(get_setting("website_name", "Cosmodrome")) ?>">
 
@@ -49,5 +49,5 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="/api/resourceurce/css/global.css">
+    <link rel="stylesheet" type="text/css" href="../resource/css/global.css">
 </head>
