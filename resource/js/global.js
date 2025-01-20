@@ -11,12 +11,14 @@ async function fetch_github_last_updated(owner, repository) {
         const response = await fetch(url);
         if (!response.ok) {
             console.log(url);
-            throw new Error('Error | Network response was not OK. (fetch_github_last_updated)');
+            console.error('Error | Network response was not OK. (fetch_github_last_updated)');
+            return null;
         }
         const data = await response.json();
         return data.updated_at;
     } catch (error) {
         console.error('Error | There was a problem with the fetch operation (fetch_github_last_updated): ', error);
+        return null;
     }
 }
 

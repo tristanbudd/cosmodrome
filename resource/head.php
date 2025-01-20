@@ -33,13 +33,6 @@
     <meta name="rating" content="general">
     <meta name="target" content="all">
 
-    <meta itemprop="name" content="jQTouch">
-    <meta http-equiv="Expires" content="0">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <meta http-equiv="imagetoolbar" content="no">
-    <meta http-equiv="x-dns-prefetch-control" content="off">
-
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?php echo(get_setting("website_name", "Cosmodrome")) ?>">
     <meta name="twitter:description" content="<?php echo(get_setting("website_description", "A Cosmodrome Website.")) ?>">
