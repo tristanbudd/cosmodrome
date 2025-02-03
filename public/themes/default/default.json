@@ -1,0 +1,8 @@
+{
+  "theme_name": "Default",
+  "theme_description": "Default theme for the website",
+  "theme_author": "Tristan Budd",
+  "theme_author_url": "https://tristanbudd.com",
+  "theme_version": "1.0.0",
+  "theme_has_light_dark_theme": true
+}

@@ -1,0 +1,86 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* Initialise Variables */
+:root {
+    --color-background: hsla(0, 0%, 0%, 1);
+    --color-heading: hsla(0, 0%, 100%, 1);
+    --color-text-primary: #FFF;
+    --color-text-secondary: #FFF;
+    --color-link: hsla(210, 100%, 66%, 1);
+}
+
+
+/* Basic Page Styles */
+body {
+    font-family: "Raleway", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    font-size: 1rem;
+    font-weight: 400;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+            'wdth' 100;
+    color: var(--color-text-primary);
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background-color: var(--color-background);
+}
+
+
+/* Headings / Sizing */
+h1 {
+    color: var(--color-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 3.125rem;
+    margin: 0 0 24px;
+}
+
+h2 {
+    color: var(--color-heading);
+    font-size: 2.375rem;
+    font-weight: 700;
+    line-height: 2.625rem;
+    margin: 0 0 20px;
+}
+
+h3 {
+    color: var(--color-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.375rem;
+    margin: 0 0 16px;
+}
+
+h4 {
+    color: var(--color-heading);
+    font-size: 1.625rem;
+    font-weight: 700;
+    line-height: 2rem;
+    margin: 0 0 12px;
+}
+
+h5 {
+    color: var(--color-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.625rem;
+    margin: 0 0 10px;
+}
+
+h6 {
+    color: var(--color-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    margin: 0 0 8px;
+}
+
+p {
+    font-size: .875rem;
+    line-height: 1.25rem;
+}

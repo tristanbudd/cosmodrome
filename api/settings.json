@@ -5,5 +5,7 @@
   "website_description_short": "Cosmodrome Website",
   "website_keywords": "cosmodrome, website, web, development, design",
   "website_author": "Cosmodrome",
-  "website_contact_email": "support@cosmodrome.org"
+  "website_contact_email": "support@cosmodrome.org",
+  "theme": "default",
+  "theme_default_colour": "light"
 }

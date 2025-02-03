@@ -34,6 +34,10 @@
       "dest": "/public/lang/$1"
     },
     {
+      "src": "^/themes/(.*)$",
+      "dest": "/public/themes/$1"
+    },
+    {
       "src": "^/robots.txt$",
       "dest": "/public/robots.txt"
     },

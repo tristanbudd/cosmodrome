@@ -4,6 +4,7 @@ console.log('Success | Loaded Common JavaScript.');
 const user_timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 console.log('Success | User Timezone Set: ', user_timezone);
 
+
 // Function to retrieve the last updated time from any public GitHub Repository.
 async function fetch_github_last_updated(owner, repository) {
     const url = `https://api.github.com/repos/${owner}/${repository}`;
@@ -22,6 +23,7 @@ async function fetch_github_last_updated(owner, repository) {
     }
 }
 
+
 // Function to update or create a new meta tag with the property and content provided.
 function update_meta_tag(property, content, type) {
     const meta_tag = document.querySelector(`meta[${type}="${property}"]`);
@@ -34,6 +36,7 @@ function update_meta_tag(property, content, type) {
         document.head.appendChild(new_meta_tag);
     }
 }
+
 
 // Function to fetch the last updated time from the GitHub Repository and update the Open Graph meta tag.
 async function fetch_og_updated_time() {
@@ -59,6 +62,7 @@ fetch_og_updated_time().then(() => {}).catch((error) => {
     console.error('Error | There was a problem with the fetch operation (fetch_og_updated_time): ', error);
 });
 
+
 // Function to update the copyright notice meta tags with the current year.
 async function update_copyright_notice() {
     const current_year = new Date().getFullYear();
@@ -74,3 +78,34 @@ async function update_copyright_notice() {
 update_copyright_notice().then(() => {}).catch((error) => {
     console.error('Error | There was a problem attempting to update copyright notice (update_copyright_notice): ', error);
 });
+
+
+// Function to create or update cookies.
+function set_cookie(name, value, days) {
+    if (document.cookie.split(';').some((item) => item.trim().startsWith('cookies_accepted='))) {
+        let expires = '';
+        if (days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = `; expires=${date.toUTCString()}`;
+        }
+        document.cookie = `${name}=${value || ''}${expires}; path=/`;
+
+        console.log('Success | Setting cookie ' + name + ' with value: ' + value + ' for ' + days + ' days.');
+    } else {
+        console.error('Error | Unable to set cookie ' + name + ' as cookies have not been accepted.');
+    }
+}
+
+// Detect user system theme preference and set the theme accordingly.
+if (window.matchMedia) {
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+        console.log('Success | Setting your default system theme preference to: Dark');
+        set_cookie('user_system_theme', 'dark', 365);
+    } else {
+        console.log('Success | Setting your default system theme preference to: Light');
+        set_cookie('user_system_theme', 'light', 365);
+    }
+} else {
+    console.error('Error | Media-Queries not supported, defaulting to colour scheme preference: Light');
+}

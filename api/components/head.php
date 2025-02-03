@@ -45,4 +45,12 @@
     <meta name="copyright" content="Copyright © <?php echo(get_setting("website_name", "Cosmodrome")) ?>">
 
     <link rel="stylesheet" type="text/css" href="/css/global.css">
+
+    <?php
+    $theme_files = get_theme_files();
+
+    foreach ($theme_files["css"] as $css_file) {
+        echo("<link rel='stylesheet' type='text/css' href='" . $css_file . "'>");
+    }
+    ?>
 </head>

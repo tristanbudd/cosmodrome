@@ -30,6 +30,14 @@ $_SESSION["page_title"] = get_lang("home", $page_language);
 
         <!-- Importing JavaScript -->
         <script type="text/javascript" rel="javascript" src="/js/global.js"></script>
+
+        <?php
+        $theme_files = get_theme_files();
+
+        foreach ($theme_files["js"] as $js_file) {
+            echo("<script type='text/javascript' rel='javascript' src='" . $js_file . "'></script>");
+        }
+        ?>
         <!-- End Importing JavaScript -->
     </body>
 </html>
