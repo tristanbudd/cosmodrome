@@ -49,6 +49,8 @@ body {
 
 
 /* Headings / Sizing */
+
+/* Temporarily Commented Out
 h1 {
     color: var(--color-heading);
     font-size: 3rem;
@@ -101,3 +103,4 @@ p {
     font-size: .875rem;
     line-height: 1.25rem;
 }
+*/
