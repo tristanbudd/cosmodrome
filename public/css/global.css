@@ -17,15 +17,6 @@
     color: var(--color-text-secondary);
 }
 
-a {
-    color: var(--color-link);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
 
 /* Text Alignment */
 .text-left {
@@ -91,6 +82,7 @@ a:hover {
     overflow-wrap: break-word !important;
     word-wrap: break-word !important;
 }
+
 
 /* Text Decoration */
 .text-underline {
