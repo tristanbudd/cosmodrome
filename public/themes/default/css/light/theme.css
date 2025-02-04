@@ -1,14 +1,31 @@
 /* Import Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/*
+Colour Ideas:
+#080F0F - Night
+#221D23 - Raisin Black
+#1C1D21 - Eerie Black
+#1B2845 - Dark Blue
+#274060 - Slightly Lighter Dark Blue
+#14110f - Smoky Black
+#373737 - Jet
+#2e294e - Space Cadet
+
+Palette #1: https://colorhunt.co/palette/ff65001e3e620b192c000000
+Palette(s) #2: https://paperheartdesign.com/blog/color-palette-awesome-space
+Palette(s) #3: https://piktochart.com/tips/outer-space-color-palette
+*/
 
 /* Initialise Variables */
 :root {
-    --color-background: hsla(0, 0%, 0%, 1);
-    --color-heading: hsla(0, 0%, 100%, 1);
-    --color-text-primary: #FFF;
-    --color-text-secondary: #FFF;
-    --color-link: hsla(210, 100%, 66%, 1);
+    --color-primary: #000;
+    --color-secondary: #000;
+    --color-background: #FFFFFF;
+    --color-heading: #000;
+    --color-text-primary: #000;
+    --color-text-secondary: #000;
+    --color-link: #000;
 }
 
 
