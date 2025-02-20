@@ -44,6 +44,7 @@
 
     <meta name="copyright" content="Copyright © <?php echo(get_setting("website_name", "Cosmodrome")) ?>">
 
+    <link rel="stylesheet" type="text/css" href="/css/override.css">
     <link rel="stylesheet" type="text/css" href="/css/global.css">
 
     <?php
