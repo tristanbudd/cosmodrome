@@ -35,21 +35,20 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?php echo(get_setting("website_name", "Cosmodrome")) ?>">
     <meta name="twitter:description" content="<?php echo(get_setting("website_description", "A Cosmodrome Website.")) ?>">
-    <meta name="twitter:image" content="/img/logo_cover.jpg">
+    <meta name="twitter:image" content="<?php echo(get_document_path("public") . "/img/logo_cover.jpg") ?>">
 
-    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96"/>
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg"/>
-    <link rel="shortcut icon" href="/favicon/favicon.ico"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" href="<?php echo(get_document_path("public") . "/favicon/favicon-96x96.png") ?>" sizes="96x96"/>
+    <link rel="icon" type="image/svg+xml" href="<?php echo(get_document_path("public") . "/favicon/favicon.svg") ?>"/>
+    <link rel="shortcut icon" href="<?php echo(get_document_path("public") . "/favicon/favicon.ico") ?>"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo(get_document_path("public") . "/favicon/apple-touch-icon.png") ?>"/>
 
     <meta name="copyright" content="Copyright © <?php echo(get_setting("website_name", "Cosmodrome")) ?>">
 
-    <link rel="stylesheet" type="text/css" href="/css/override.css">
-    <link rel="stylesheet" type="text/css" href="/css/global.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo(get_document_path("public") . "/css/override.css") ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo(get_document_path("public") . "/css/global.css") ?>">
 
     <?php
     $theme_files = get_theme_files();
-
     foreach ($theme_files["css"] as $css_file) {
         echo("<link rel='stylesheet' type='text/css' href='" . $css_file . "'>");
     }

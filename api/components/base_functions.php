@@ -1,6 +1,22 @@
 <?php
-function get_setting($setting_name, $fallback) {
-    $settings_file = $_SERVER["DOCUMENT_ROOT"] . "/settings.json";
+function get_document_path($path_type="", $component=false) {
+    $is_running_locally = !(strpos($_SERVER["HTTP_HOST"], "localhost") === false);
+
+    if ($is_running_locally) {
+        $path = "../" . $path_type;
+    } else {
+        $path = "";
+
+        if ($component) {
+            $path = $_SERVER["DOCUMENT_ROOT"] . "/public";
+        }
+    }
+
+    return $path;
+}
+
+function get_setting($setting_name, $fallback="No Fallback") {
+    $settings_file = $_SERVER["DOCUMENT_ROOT"] . "/api/settings.json";
 
     if (file_exists($settings_file)) {
         $settings = json_decode(file_get_contents($settings_file), true);
@@ -17,12 +33,11 @@ function get_setting($setting_name, $fallback) {
 
 function get_page_language() {
     if (isset($_SESSION["user_language"])) {
-        $language_file = $_SERVER["DOCUMENT_ROOT"] . "/public/lang/" . $_SESSION["user_language"] . ".json";
+        $language_file = get_document_path("public", true) . "/lang/" . $_SESSION["user_language"] . ".json";
 
         if (file_exists($language_file)) {
             return $_SESSION["user_language"];
         } else {
-            // Send error message due to client incorrect language.
             return get_setting("default_language", "en");
         }
     } else {
@@ -35,7 +50,7 @@ function get_lang($lang_key, $lang_file) {
         $lang_file = get_page_language();
     }
 
-    $language_file = $_SERVER["DOCUMENT_ROOT"] . "/public/lang/" . $lang_file . ".json";
+    $language_file = get_document_path("public", true) . "/lang/" . $lang_file . ".json";
 
     if (file_exists($language_file)) {
         $lang = json_decode(file_get_contents($language_file), true);
@@ -67,7 +82,7 @@ function get_theme_choice() {
 function get_theme_data() {
     $theme = get_setting("theme", "default");
 
-    $theme_file = $_SERVER["DOCUMENT_ROOT"] . "/public/themes/" . $theme . "/" . $theme . ".json";
+    $theme_file = get_document_path("public", true) . "/themes/" . $theme . "/" . $theme . ".json";
 
     if (file_exists($theme_file)) {
         return json_decode(file_get_contents($theme_file), true);
@@ -76,7 +91,7 @@ function get_theme_data() {
     }
 }
 
-function get_theme_setting($setting_name, $fallback) {
+function get_theme_setting($setting_name, $fallback="No Fallback") {
     $theme_data = get_theme_data();
 
     if (isset($theme_data[$setting_name])) {
@@ -111,13 +126,22 @@ function get_theme_files() {
         $theme_mode = "";
     }
 
-    $css_folder = $_SERVER["DOCUMENT_ROOT"] . "/public/themes/" . $theme . "/css/" . $theme_mode . "/";
-    $js_folder = $_SERVER["DOCUMENT_ROOT"] . "/public/themes/" . $theme . "/js/" . $theme_mode . "/";
-    $css_folder_path = "/themes/" . $theme . "/css/" . $theme_mode . "/";
-    $js_folder_path = "/themes/" . $theme . "/js/" . $theme_mode . "/";
+    $css_folder = get_document_path("public", true) . "/themes/" . $theme . "/css/" . $theme_mode . "/";
+    $js_folder = get_document_path("public", true) . "/themes/" . $theme . "/js/" . $theme_mode . "/";
+    $css_folder_path = get_document_path("public", true) . "/themes/" . $theme . "/css/" . $theme_mode . "/";
+    $js_folder_path = get_document_path("public", true) . "/themes/" . $theme . "/js/" . $theme_mode . "/";
 
     $css_files = scan_files($css_folder, $css_folder_path);
     $js_files = scan_files($js_folder, $js_folder_path);
+
+    // Remove the /var/task/user/public/ from the file path. (Vercel Support)
+    $css_files = array_map(function($file) {
+        return str_replace("/var/task/user/public/", "", $file);
+    }, $css_files);
+
+    $js_files = array_map(function($file) {
+        return str_replace("/var/task/user/public/", "", $file);
+    }, $js_files);
 
     return [
         "css" => $css_files,

@@ -97,15 +97,22 @@ function set_cookie(name, value, days) {
     }
 }
 
+// Function to check if a cookie is already set.
+function check_cookie(name) {
+    return document.cookie.split(';').some((item) => item.trim().startsWith(name + '='));
+}
+
 // Detect user system theme preference and set the theme accordingly.
-if (window.matchMedia) {
-    if(window.matchMedia('(prefers-color-scheme: dark)').matches){
-        console.log('Success | Setting your default system theme preference to: Dark');
-        set_cookie('user_system_theme', 'dark', 365);
+if (!check_cookie('user_system_theme')) {
+    if (window.matchMedia) {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            console.log('Success | Setting your default system theme preference to: Dark');
+            set_cookie('user_system_theme', 'dark', 365);
+        } else {
+            console.log('Success | Setting your default system theme preference to: Light');
+            set_cookie('user_system_theme', 'light', 365);
+        }
     } else {
-        console.log('Success | Setting your default system theme preference to: Light');
-        set_cookie('user_system_theme', 'light', 365);
+        console.error('Error | Media-Queries not supported, defaulting to colour scheme preference: Light');
     }
-} else {
-    console.error('Error | Media-Queries not supported, defaulting to colour scheme preference: Light');
 }

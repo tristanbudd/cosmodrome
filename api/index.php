@@ -16,6 +16,10 @@ $_SESSION["page_title"] = get_lang("home", $page_language);
     <!-- End Importing Page Header & SEO -->
 
     <body>
+        <!-- Importing Page Header -->
+        <?php include("components/header.php"); ?>
+        <!-- End Importing Page Header -->
+
         <!-- Main Content -->
         <h1>Heading 1</h1>
         <h2>Heading 2</h2>
@@ -29,13 +33,13 @@ $_SESSION["page_title"] = get_lang("home", $page_language);
         <!-- End Main Content -->
 
         <!-- Importing JavaScript -->
-        <script type="text/javascript" rel="javascript" src="/js/global.js"></script>
+        <script type="text/javascript" rel="javascript" src="<?php echo(get_document_path("public") . "/js/global.js") ?>"></script>
 
         <?php
         $theme_files = get_theme_files();
 
         foreach ($theme_files["js"] as $js_file) {
-            echo("<script type='text/javascript' rel='javascript' src='" . $js_file . "'></script>");
+            echo("<script type='text/javascript' rel='javascript' src='" . get_document_path("public") . $js_file . "'></script>");
         }
         ?>
         <!-- End Importing JavaScript -->
