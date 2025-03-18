@@ -1,0 +1,40 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*
+!!! NOT FINISHED !!!
+*/
+
+/* Initialise Variables */
+:root {
+    --color-primary: #FFF;
+    --color-secondary: #FFF;
+    --color-background: #000;
+    --color-heading: #FFF;
+    --color-text-primary: #FFF;
+    --color-text-secondary: #FFF;
+    --color-link: #FFF;
+}
+
+
+/* Basic Page Styles */
+body {
+    font-family: "Raleway", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    font-size: 1rem;
+    font-weight: 400;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+            'wdth' 100;
+    color: var(--color-text-primary);
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background-color: var(--color-background);
+}
+
+.logo-colour {
+    filter: invert(100%);
+}
