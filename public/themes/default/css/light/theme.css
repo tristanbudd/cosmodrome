@@ -1,48 +1,82 @@
 /* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-/*
-Colour Ideas:
-#080F0F - Night
-#221D23 - Raisin Black
-#1C1D21 - Eerie Black
-#1B2845 - Dark Blue
-#274060 - Slightly Lighter Dark Blue
-#14110f - Smoky Black
-#373737 - Jet
-#2e294e - Space Cadet
-
-Palette #1: https://colorhunt.co/palette/ff65001e3e620b192c000000
-Palette(s) #2: https://paperheartdesign.com/blog/color-palette-awesome-space
-Palette(s) #3: https://piktochart.com/tips/outer-space-color-palette
-*/
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
 
 /* Initialise Variables */
 :root {
+    /* Colour Scheme */
     --color-primary: #000;
     --color-secondary: #000;
-    --color-background: #FFFFFF;
-    --color-heading: #000;
+    --color-background: #FAFAFA;
     --color-text-primary: #000;
     --color-text-secondary: #000;
     --color-link: #000;
+
+    /* Font Family */
+    --font-primary: 'Geist', sans-serif;
+    --font-secondary: 'Space Grotesk', sans-serif;
 }
 
 
 /* Basic Page Styles */
 body {
-    font-family: "Raleway", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    font-family: var(--font-primary), -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     font-size: 1rem;
     font-weight: 400;
     font-optical-sizing: auto;
     font-style: normal;
     font-variation-settings:
             'wdth' 100;
+
     color: var(--color-text-primary);
     line-height: 1.5;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+
     background-color: var(--color-background);
+
+    max-width: 100vw;
+    min-height: 100%;
+    scroll-padding-top: 64px; /* Use header height for this */
+}
+
+/* Heading Styles */
+header {
+    width: 100%;
+    height: 64px;
+
+    background-color: var(--color-background);
+
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: 24px;
+    padding-right: 24px;
+
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+    transition: box-shadow 200ms ease 0s, background-color 200ms ease 0s;
+    z-index: 1000;
+}
+
+.header-fill {
+    height: 64px;
+    width: 100%;
+}
+
+header:not(.has-scrolled), header.header-transparent {
+    background: transparent;
+    box-shadow: none;
+}
+
+header.header-sticky {
+    position: fixed;
+    top: 0;
+}
+
+.header-logo-text {
+    font-size: 1.5rem;
+    font-weight: 600;
 }

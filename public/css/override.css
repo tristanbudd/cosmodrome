@@ -139,6 +139,11 @@ textarea {
     opacity: 1;
 }
 
+/* Page min-height Fixes For Some Devices */
+:where(html,body) {
+    min-height: 100%;
+}
+
 /* Adds Reduced Motions For Animations */
 @media (prefers-reduced-motion: reduce) {
     * {

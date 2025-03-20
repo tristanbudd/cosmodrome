@@ -44,6 +44,11 @@
 
     <meta name="copyright" content="Copyright © <?php echo(get_setting("website_name", "Cosmodrome")) ?>">
 
+    <!-- Importing Fonts -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- End Importing Stylesheets -->
+
+    <!-- Importing Stylesheets -->
     <link rel="stylesheet" type="text/css" href="<?php echo(get_document_path("public") . "/css/override.css") ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo(get_document_path("public") . "/css/global.css") ?>">
 
@@ -53,4 +58,5 @@
         echo("<link rel='stylesheet' type='text/css' href='" . $css_file . "'>");
     }
     ?>
+    <!-- End Importing Stylesheets -->
 </head>

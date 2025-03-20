@@ -116,3 +116,29 @@ if (!check_cookie('user_system_theme')) {
         console.error('Error | Media-Queries not supported, defaulting to colour scheme preference: Light');
     }
 }
+
+// Detect page scrolling to adjust page styling & toggle to-top button.
+function debounce(fn, delay) {
+    let timer = null;
+    return function () {
+        clearTimeout(timer);
+        timer = setTimeout(fn, delay);
+    };
+}
+
+window.addEventListener('scroll', debounce(() => {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    const header = document.getElementById('header');
+
+    if (header) {
+        if (scrollPosition >= 1) {
+            if (!header.classList.contains('has-scrolled')) {
+                header.classList.add('has-scrolled');
+            }
+        } else {
+            if (header.classList.contains('has-scrolled')) {
+                header.classList.remove('has-scrolled');
+            }
+        }
+    }
+}, 10));

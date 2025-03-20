@@ -17,7 +17,10 @@ $_SESSION["page_title"] = get_lang("home", $page_language);
 
     <body>
         <!-- Importing Page Header -->
-        <?php include("components/header.php"); ?>
+        <?php
+        include("components/header.php");
+        create_header(true, false);
+        ?>
         <!-- End Importing Page Header -->
 
         <!-- Main Content -->
@@ -27,6 +30,7 @@ $_SESSION["page_title"] = get_lang("home", $page_language);
         <h4>Heading 4</h4>
         <h5>Heading 5</h5>
         <h6>Heading 6</h6>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <p class="text-italic">Hello World</p>
         <a href="#">Home</a>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
