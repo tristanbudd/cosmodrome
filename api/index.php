@@ -19,7 +19,11 @@ $_SESSION["page_title"] = get_lang("home", $page_language);
         <!-- Importing Page Header -->
         <?php
         include("components/header.php");
-        create_header(true, false);
+
+        $header_data = array(
+            "is_sticky" => true
+        );
+        create_header($header_data);
         ?>
         <!-- End Importing Page Header -->
 

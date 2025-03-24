@@ -5,11 +5,10 @@
 :root {
     /* Colour Scheme */
     --color-primary: #000;
-    --color-secondary: #000;
+    --color-secondary: #EBEBEB;
     --color-background: #FAFAFA;
     --color-text-primary: #000;
-    --color-text-secondary: #000;
-    --color-link: #000;
+    --color-text-secondary: #666;
 
     /* Font Family */
     --font-primary: 'Geist', sans-serif;
@@ -79,4 +78,40 @@ header.header-sticky {
 .header-logo-text {
     font-size: 1.5rem;
     font-weight: 600;
+    margin-right: 32px;
+}
+
+header a {
+    text-decoration: none !important;
+}
+
+.header-left,
+.header-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-link-a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 12px;
+    color: var(--color-text-secondary)
+}
+
+.header-link-a:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-text-primary);
+    border-radius: 32px;
+}
+
+.header-link-a i {
+    margin-left: 6px;
+    font-size: 0.5rem;
+}
+
+.dropdown {
+    cursor: default !important;
 }
