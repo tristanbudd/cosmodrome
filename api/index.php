@@ -21,7 +21,83 @@ $_SESSION["page_title"] = get_lang("home", $page_language);
         include("components/header.php");
 
         $header_data = array(
-            "is_sticky" => true
+            "is_sticky" => true,
+            "show_profile" => true,
+            "header_links" => array(
+                array(
+                    "type" => "a",
+                    "text" => "Productivity",
+                    "link" => "",
+                    "target" => "_self",
+                    "dropdown" => true,
+                    "dropdown_id" => "productivity",
+                    "dropdown_links" => array(
+                        array(
+                            "header" => "Tools",
+                            "links" => array(
+                                array(
+                                    "icon" => "fa-solid fa-pen",
+                                    "text" => "Cards",
+                                    "description" => "Plan and manage your day",
+                                    "link" => "https://example.com",
+                                    "target" => "_self"
+                                ),
+                                array(
+                                    "icon" => "fa-solid fa-cog",
+                                    "text" => "Settings",
+                                    "description" => "Change your settings.",
+                                    "link" => "https://example.com",
+                                    "target" => "_self"
+                                )
+                            )
+                        ),
+                        array(
+                            "header" => "Tools 2",
+                            "links" => array(
+                                array(
+                                    "icon" => "fa-solid fa-pen",
+                                    "text" => "Editor 2",
+                                    "description" => "A simple text editor.",
+                                    "link" => "https://example.com",
+                                    "target" => "_self"
+                                ),
+                                array(
+                                    "icon" => "fa-solid fa-cog",
+                                    "text" => "Settings 2",
+                                    "description" => "Change your settings.",
+                                    "link" => "https://example.com",
+                                    "target" => "_self"
+                                )
+                            )
+                        ),
+                        array(
+                            "header" => "Tools",
+                            "links" => array(
+                                array(
+                                    "icon" => "fa-solid fa-pen",
+                                    "text" => "Editor",
+                                    "description" => "A simple text editor.",
+                                    "link" => "https://example.com",
+                                    "target" => "_self"
+                                ),
+                                array(
+                                    "icon" => "fa-solid fa-cog",
+                                    "text" => "Settings",
+                                    "description" => "Change your settings.",
+                                    "link" => "https://example.com",
+                                    "target" => "_self"
+                                )
+                            )
+                        ),
+                    )
+                ),
+                array(
+                    "type" => "a",
+                    "text" => "Support",
+                    "link" => "https://example.com",
+                    "target" => "_self"
+                )
+            ),
         );
         create_header($header_data);
         ?>
