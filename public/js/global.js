@@ -127,11 +127,11 @@ function debounce(fn, delay) {
 }
 
 window.addEventListener('scroll', debounce(() => {
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    const scroll_position = window.pageYOffset || document.documentElement.scrollTop;
     const header = document.getElementById('header');
 
     if (header) {
-        if (scrollPosition >= 1) {
+        if (scroll_position >= 1) {
             if (!header.classList.contains('has-scrolled')) {
                 header.classList.add('has-scrolled');
             }
@@ -142,3 +142,51 @@ window.addEventListener('scroll', debounce(() => {
         }
     }
 }, 10));
+
+// Make the dropdown menu work on the navigation bar.
+const header_links = document.querySelectorAll('.header-link-a');
+
+header_links.forEach((link) => {
+    link.addEventListener('mouseover', () => {
+        const link_id = link.getAttribute('id');
+        const dropdown = document.getElementById(`header-${link_id}`);
+
+        document.querySelectorAll('.dropdown-content').forEach((otherDropdown) => {
+            if (otherDropdown !== dropdown) {
+                otherDropdown.style.display = 'none';
+            }
+        });
+
+        if (dropdown) {
+            dropdown.style.display = 'flex';
+        }
+    });
+
+    link.addEventListener('mouseout', () => {
+        const link_id = link.getAttribute('id');
+        const dropdown = document.getElementById(`header-${link_id}`);
+        if (dropdown) {
+            setTimeout(() => {
+                if (!dropdown.matches(':hover') && !link.matches(':hover')) {
+                    dropdown.style.display = 'none';
+                }
+            }, 200);
+        }
+    });
+
+    const dropdown_id = link.getAttribute('id');
+    const dropdown = document.getElementById(`header-${dropdown_id}`);
+    if (dropdown) {
+        dropdown.addEventListener('mouseover', () => {
+            dropdown.style.display = 'flex';
+        });
+
+        dropdown.addEventListener('mouseout', () => {
+            setTimeout(() => {
+                if (!dropdown.matches(':hover') && !link.matches(':hover')) {
+                    dropdown.style.display = 'none';
+                }
+            }, 200);
+        });
+    }
+});

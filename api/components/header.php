@@ -35,6 +35,7 @@ function create_header($data = array()) {
 
                 for ($i = 0; $i < count($header_links); $i++) {
                     $header_item = $header_links[$i];
+                    $id = $header_item["id"];
                     $type = $header_item["type"];
                     $text = $header_item["text"];
                     $link = isset($header_item["link"]) ? $header_item["link"] : '';
@@ -44,13 +45,13 @@ function create_header($data = array()) {
                     $class = isset($header_class_types[$type]) ? $header_class_types[$type] : '';
                     ?>
                     <div class="header-link-container">
-                        <a <?php echo($link ? 'href="' . $link . '"' : ''); ?> class="<?php echo($class); ?> <?php echo($dropdown ? 'dropdown' : ''); ?>" target="<?php echo($target); ?>">
+                        <a <?php echo($link ? 'href="' . $link . '"' : ''); ?> class="<?php echo($class); ?> <?php echo($dropdown ? 'dropdown' : ''); ?>" target="<?php echo($target); ?>" id="<?php echo($id); ?>">
                             <p><?php echo($text); ?></p>
                         </a>
                         <?php
-                        if ($dropdown && isset($header_item["dropdown_links"]) && isset($header_item["dropdown_id"])) {
+                        if ($dropdown && isset($header_item["dropdown_links"])) {
                             ?>
-                            <div class="dropdown-content" id="<?php echo($header_item["dropdown_id"]); ?>">
+                            <div class="dropdown-content" id="header-<?php echo($id); ?>" style="display: none;">
                                 <?php
                                 foreach ($header_item["dropdown_links"] as $dropdown_section) {
                                     ?>

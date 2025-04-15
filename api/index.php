@@ -25,12 +25,12 @@ $_SESSION["page_title"] = get_lang("home", $page_language);
             "show_profile" => true,
             "header_links" => array(
                 array(
+                    "id" => "productivity",
                     "type" => "a",
                     "text" => "Productivity",
                     "link" => "",
                     "target" => "_self",
                     "dropdown" => true,
-                    "dropdown_id" => "productivity",
                     "dropdown_links" => array(
                         array(
                             "header" => "Tools",
@@ -92,10 +92,66 @@ $_SESSION["page_title"] = get_lang("home", $page_language);
                     )
                 ),
                 array(
+                    "id" => "about",
+                    "type" => "a",
+                    "text" => "About",
+                    "link" => "/about",
+                    "target" => "_self"
+                ),
+                array(
+                    "id" => "support",
                     "type" => "a",
                     "text" => "Support",
-                    "link" => "https://example.com",
+                    "link" => "/support",
                     "target" => "_self"
+                ),
+                array(
+                    "id" => "productivity2",
+                    "type" => "a",
+                    "text" => "Productivity2",
+                    "link" => "",
+                    "target" => "_self",
+                    "dropdown" => true,
+                    "dropdown_links" => array(
+                        array(
+                            "header" => "Tools",
+                            "links" => array(
+                                array(
+                                    "icon" => "fa-solid fa-pen",
+                                    "text" => "Cards",
+                                    "description" => "Plan and manage your day",
+                                    "link" => "https://example.com",
+                                    "target" => "_self"
+                                ),
+                                array(
+                                    "icon" => "fa-solid fa-cog",
+                                    "text" => "Settings",
+                                    "description" => "Change your settings.",
+                                    "link" => "https://example.com",
+                                    "target" => "_self"
+                                )
+                            )
+                        ),
+                        array(
+                            "header" => "Tools 2",
+                            "links" => array(
+                                array(
+                                    "icon" => "fa-solid fa-pen",
+                                    "text" => "Editor 2",
+                                    "description" => "A simple text editor.",
+                                    "link" => "https://example.com",
+                                    "target" => "_self"
+                                ),
+                                array(
+                                    "icon" => "fa-solid fa-cog",
+                                    "text" => "Settings 2",
+                                    "description" => "Change your settings.",
+                                    "link" => "https://example.com",
+                                    "target" => "_self"
+                                )
+                            )
+                        ),
+                    )
                 )
             ),
         );
