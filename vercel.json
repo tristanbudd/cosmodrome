@@ -6,14 +6,8 @@
   },
   "routes": [
     {
-      "src": "^/api/([^/]+\\.php)$",
-      "dest": "/api/$1",
-      "check": true
-    },
-    {
       "src": "^/api/(.*)$",
-      "dest": "/api/$1",
-      "check": true
+      "dest": "/api/$1"
     },
     {
       "src": "^/css/(.*)$",
@@ -28,7 +22,7 @@
       "dest": "/public/img/$1"
     },
     {
-      "src": "^/icons/(.*)$",
+      "src": "^/img/(.*)$",
       "dest": "/public/icons/$1"
     },
     {
@@ -54,10 +48,6 @@
     {
       "src": "^/sitemap.xml$",
       "dest": "/public/sitemap.xml"
-    },
-    {
-      "src": ".*",
-      "dest": "/api/index.php"
     }
   ]
 }
