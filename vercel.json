@@ -22,10 +22,6 @@
       "dest": "/public/img/$1"
     },
     {
-      "src": "^/img/(.*)$",
-      "dest": "/public/icons/$1"
-    },
-    {
       "src": "^/fonts/(.*)$",
       "dest": "/public/fonts/$1"
     },
@@ -48,10 +44,6 @@
     {
       "src": "^/sitemap.xml$",
       "dest": "/public/sitemap.xml"
-    },
-    {
-      "src": "^(.*)$",
-      "dest": "/api/"
     }
   ]
 }
