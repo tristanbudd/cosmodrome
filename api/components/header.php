@@ -28,7 +28,7 @@ function create_header($data = array()) {
                 <?php
                 if (!$hide_logo) {
                     ?>
-                    <a href="#">
+                    <a href="index.php">
                         <h2 class="header-logo-text"><?php echo(strtoupper(get_setting("website_name", "Cosmodrome"))); ?></h2>
                     </a>
                     <?php

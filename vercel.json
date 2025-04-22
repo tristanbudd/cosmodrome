@@ -7,11 +7,13 @@
   "routes": [
     {
       "src": "^/api/([^/]+\\.php)$",
-      "dest": "/api/$1"
+      "dest": "/api/$1",
+      "check": true
     },
     {
       "src": "^/api/(.*)$",
-      "dest": "/api/$1"
+      "dest": "/api/$1",
+      "check": true
     },
     {
       "src": "^/css/(.*)$",
@@ -54,7 +56,7 @@
       "dest": "/public/sitemap.xml"
     },
     {
-      "src": "^(.*)$",
+      "src": ".*",
       "dest": "/api/index.php"
     }
   ]
