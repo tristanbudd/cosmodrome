@@ -22,6 +22,10 @@
       "dest": "/public/img/$1"
     },
     {
+      "src": "^/img/(.*)$",
+      "dest": "/public/icons/$1"
+    },
+    {
       "src": "^/fonts/(.*)$",
       "dest": "/public/fonts/$1"
     },

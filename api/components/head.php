@@ -44,9 +44,9 @@
 
     <meta name="copyright" content="Copyright © <?php echo(get_setting("website_name", "Cosmodrome")) ?>">
 
-    <!-- Importing Fonts -->
+    <!-- Importing FontAwesome -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <!-- End Importing Stylesheets -->
+    <!-- End Importing FontAwesome -->
 
     <!-- Importing Stylesheets -->
     <link rel="stylesheet" type="text/css" href="<?php echo(get_document_path("public") . "/css/override.css") ?>">

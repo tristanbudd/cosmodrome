@@ -5,6 +5,7 @@ function create_header($data = array()) {
     $hide_logo = isset($data["hide_logo"]) ? $data["hide_logo"] : false;
     $hide_dashboard = isset($data["hide_dashboard"]) ? $data["hide_dashboard"] : false;
     $show_profile = isset($data["show_profile"]) && $data["show_profile"];
+    $show_return_home = isset($data["show_return_home"]) && $data["show_return_home"];
 
     $header_links = isset($data["header_links"]) ? $data["header_links"] : array();
 
@@ -61,7 +62,7 @@ function create_header($data = array()) {
                                         foreach ($dropdown_section["links"] as $dropdown_link) {
                                             ?>
                                             <a href="<?php echo($dropdown_link["link"]); ?>" target="<?php echo($dropdown_link["target"]); ?>" class="dropdown-link">
-                                                <i class="<?php echo($dropdown_link["icon"]); ?>"></i>
+                                                <i class="<?php echo($dropdown_link["icon"]); ?>" title="Navigate To: <?php echo($dropdown_link["text"]); ?>"></i>
                                                 <div class="dropdown-text">
                                                     <span class="dropdown-title"><?php echo($dropdown_link["text"]); ?></span>
                                                     <span class="dropdown-description"><?php echo($dropdown_link["description"]); ?></span>
@@ -85,35 +86,38 @@ function create_header($data = array()) {
             </div>
             <div class="header-group header-right">
                 <?php
-                if (!$hide_dashboard) {
-                    if (isset($_SESSION["user_id"])) {
-                        ?>
-                        <a href="https://example.com" class="header-link-b" target="_self">
-                            <p>Dashboard</p>
-                        </a>
-                        <?php
-                    }
-                }
-                ?>
-
-                <?php
                 if ($show_profile) {
                     if (isset($_SESSION["user_id"])) {
+                        if (!$hide_dashboard) {
+                            ?>
+                            <a href="/dashboard" class="header-link-b" target="_self">
+                                <p>Dashboard</p>
+                            </a>
+                            <?php
+                        }
                         ?>
-                        <a href="https://example.com" class="dropdown">
+                        <a href="" class="dropdown">
                             <img src="https://picsum.photos/200" alt="ACCOUNT NAME profile" class="header-profile-img">
                         </a>
                         <?php
                     } else {
                         ?>
-                        <a href="https://example.com" class="header-link-b" target="_self">
+                        <a href="signup.php" class="header-link-b" target="_self">
                             <p>Sign Up</p>
                         </a>
-                        <a href="https://example.com" class="header-link-c" target="_self">
+                        <a href="login.php" class="header-link-c" target="_self">
                             <p>Login</p>
                         </a>
                         <?php
                     }
+                }
+
+                if ($show_return_home) {
+                    ?>
+                    <a href="index.php" class="header-link-b" target="_self">
+                        <p>Return To Homepage</p>
+                    </a>
+                    <?php
                 }
                 ?>
             </div>
