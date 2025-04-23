@@ -5,8 +5,13 @@ const form = document.querySelector('form');
 const error_message = document.getElementById('error_message');
 const signup_page_1 = document.getElementById('signup_page_1');
 const signup_page_2 = document.getElementById('signup_page_2');
+const signup_page_3 = document.getElementById('signup_page_3');
+const signup_page_4 = document.getElementById('signup_page_4');
 
 const terms_agreed = document.getElementById('terms_agreed');
+const first_name = document.getElementById('first_name');
+const last_name = document.getElementById('last_name');
+
 const submit_button = document.querySelector('input[type="submit"]');
 
 // Sign-Up Page System
@@ -20,6 +25,14 @@ function signup_page(current_page, target_page) {
         } else {
             error_message.style.display = 'block';
             error_message.innerHTML = 'Please agree to the terms and conditions before proceeding.';
+        }
+    } else if (current_page === 2 && target_page === 3) {
+        if (first_name.value !== '' && last_name.value !== '') {
+            signup_page_2.style.display = 'none';
+            signup_page_3.style.display = 'flex';
+        } else {
+            error_message.style.display = 'block';
+            error_message.innerHTML = 'Please fill in all required fields.';
         }
     } else {
         const current_page_element = document.getElementById(`signup_page_${current_page}`);
