@@ -4,12 +4,16 @@
 /* Initialise Variables */
 :root {
     /* Colour Scheme */
-    --color-primary: #000;
-    --color-secondary: #EBEBEB;
-    --color-background: #FAFAFA;
-    --color-text-primary: #000;
-    --color-text-secondary: #666;
-    --color-text-tertiary: #FFF;
+    --colour-primary: #000;
+    --colour-secondary: #EBEBEB;
+    --colour-background: #FAFAFA;
+    --colour-text-primary: #000;
+    --colour-text-secondary: #666;
+    --colour-text-tertiary: #FFF;
+
+    --colour-success: #61D161;
+    --colour-error: #E23636;
+    --colour-warning: #EDC25E;
 
     /* Font Family */
     --font-primary: 'Geist', sans-serif;
@@ -27,14 +31,14 @@ body {
     font-variation-settings:
             'wdth' 100;
 
-    color: var(--color-text-primary);
+    color: var(--colour-text-primary);
     line-height: 1.5;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
 
-    background-color: var(--color-background);
+    background-color: var(--colour-background);
 
     max-width: 100vw;
     min-height: 100%;
@@ -56,7 +60,7 @@ header {
     width: 100%;
     height: 64px;
 
-    background-color: var(--color-background);
+    background-color: var(--colour-background);
 
     position: relative;
     display: flex;
@@ -109,7 +113,7 @@ header a {
     flex-direction: row;
     align-items: center;
     padding: 4px 12px;
-    color: var(--color-text-secondary);
+    color: var(--colour-text-secondary);
     font-size: 1rem;
 
     transition: all 200ms ease 0s;
@@ -130,8 +134,8 @@ header a {
 }
 
 .header-link-a:hover {
-    background-color: var(--color-secondary);
-    color: var(--color-text-primary);
+    background-color: var(--colour-secondary);
+    color: var(--colour-text-primary);
     border-radius: 32px;
 
     transition: all 200ms ease 0s;
@@ -145,17 +149,17 @@ header a {
     font-size: 0.9rem;
     font-weight: 500;
 
-    color: var(--color-text-secondary);
-    border: 1px solid var(--color-text-secondary);
+    color: var(--colour-text-secondary);
+    border: 1px solid var(--colour-text-secondary);
     border-radius: 8px;
 
     transition: all 200ms ease 0s;
 }
 
 .header-link-b:hover {
-    background-color: var(--color-secondary);
-    border: 1px solid var(--color-text-secondary);
-    color: var(--color-text-primary);
+    background-color: var(--colour-secondary);
+    border: 1px solid var(--colour-text-secondary);
+    color: var(--colour-text-primary);
 
     transition: all 200ms ease 0s;
 }
@@ -168,9 +172,9 @@ header a {
     font-size: 0.9rem;
     font-weight: 500;
 
-    color: var(--color-text-tertiary);
-    border: 1px solid var(--color-text-secondary);
-    background-color: var(--color-primary);
+    color: var(--colour-text-tertiary);
+    border: 1px solid var(--colour-text-secondary);
+    background-color: var(--colour-primary);
     border-radius: 8px;
 
     transition: all 200ms ease 0s;
@@ -181,18 +185,18 @@ header a {
     height: 32px;
     border-radius: 50%;
     object-fit: cover;
-    border: 1px solid var(--color-secondary);
-    box-shadow: var(--color-secondary) 0 0 0 1px;
+    border: 1px solid var(--colour-secondary);
+    box-shadow: var(--colour-secondary) 0 0 0 1px;
 }
 
 .dropdown-content {
     margin-top: 8px;
     position: fixed;
-    background-color: var(--color-text-tertiary);
+    background-color: var(--colour-text-tertiary);
     padding: 18px;
     border-radius: 16px;
-    border: 1px solid var(--color-secondary);
-    box-shadow: var(--color-secondary) 0 0 0 1px;
+    border: 1px solid var(--colour-secondary);
+    box-shadow: var(--colour-secondary) 0 0 0 1px;
     display: flex;
     flex-direction: row;
     gap: 18px;
@@ -205,7 +209,7 @@ header a {
 }
 
 .dropdown-section h4 {
-    color: var(--color-text-secondary);
+    color: var(--colour-text-secondary);
     font-size: 1rem;
 }
 
@@ -219,11 +223,11 @@ header a {
 
 .dropdown-link:hover {
     i {
-        background-color: var(--color-primary);
-        color: var(--color-text-tertiary);
+        background-color: var(--colour-primary);
+        color: var(--colour-text-tertiary);
     }
     .dropdown-description {
-        color: var(--color-text-primary);
+        color: var(--colour-text-primary);
     }
 }
 
@@ -233,7 +237,7 @@ header a {
     justify-content: center;
     padding: 8px;
     border-radius: 4px;
-    border: 1px solid var(--color-secondary);
+    border: 1px solid var(--colour-secondary);
     box-sizing: content-box;
     width: 16px;
     height: 16px;
@@ -247,13 +251,13 @@ header a {
 .dropdown-title {
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--color-text-primary);
+    color: var(--colour-text-primary);
 }
 
 .dropdown-description {
     font-size: 0.75rem;
     font-weight: 500;
-    color: var(--color-text-secondary);
+    color: var(--colour-text-secondary);
 }
 
 /* Signup / Login Page */
@@ -278,15 +282,18 @@ header a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 24px;
+}
+
+.signup-form-container img {
     margin-right: 24px;
+    margin-left: -32px;
 }
 
 .signup-form-container h1 {
     font-size: 2rem;
     font-weight: 600;
     letter-spacing: 0.1rem;
-    color: var(--color-text-primary);
+    color: var(--colour-text-primary);
     text-transform: uppercase;
     margin-bottom: 12px;
 }
@@ -295,7 +302,7 @@ header a {
     font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 0.05rem;
-    color: var(--color-text-primary);
+    color: var(--colour-text-primary);
     text-transform: uppercase;
     margin-bottom: 8px;
 }
@@ -303,14 +310,14 @@ header a {
 .signup-form-container p {
     font-size: 1rem;
     font-weight: 400;
-    color: var(--color-text-primary);
+    color: var(--colour-text-primary);
     margin-bottom: 8px;
 }
 
 .signup-form-container a {
     font-size: 1rem;
     font-weight: 400;
-    color: var(--color-text-secondary);
+    color: var(--colour-text-secondary);
     margin-bottom: 8px;
 }
 
@@ -322,25 +329,52 @@ input[type="checkbox"] {
     width: 16px;
     height: 16px;
     border-radius: 4px;
-    border: 1px solid var(--color-secondary);
-    background-color: var(--color-text-tertiary);
+    border: 1px solid var(--colour-secondary);
+    background-color: var(--colour-text-tertiary);
     box-sizing: content-box;
-    box-shadow: var(--color-secondary) 0 0 0 1px;
+    box-shadow: var(--colour-secondary) 0 0 0 1px;
     margin-right: 8px;
-    accent-color: var(--color-primary);
+    accent-color: var(--colour-primary);
 }
 
-input[type="submit"] {
+.signup-double-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.form-button-a {
     width: 100%;
     text-align: center;
-    background-color: var(--color-primary);
-    color: var(--color-text-tertiary);
-    border: 1px solid var(--color-secondary);
+    background-color: var(--colour-text-tertiary);
+    color: var(--colour-text-primary);
+    border: 1px solid var(--colour-secondary);
     border-radius: 8px;
     padding: 8px 16px;
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
+}
+
+.form-button-b {
+    width: 100%;
+    text-align: center;
+    background-color: var(--colour-primary);
+    color: var(--colour-text-tertiary);
+    border: 1px solid var(--colour-secondary);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.error_message {
+    color: var(--colour-error);
+    font-size: 1rem;
+    margin-bottom: 8px;
 }
 
 /* Page Responsiveness */
@@ -363,6 +397,10 @@ input[type="submit"] {
     }
 
     .signup-form-container a {
+        font-size: 1.2rem;
+    }
+
+    .error_message {
         font-size: 1.2rem;
     }
 
