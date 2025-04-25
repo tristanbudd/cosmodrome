@@ -335,7 +335,7 @@ test_file_access_input.addEventListener('change', (event) => {
     reader.onload = function (e) {
         const content = e.target.result;
         if (content.trim() === '') {
-            info_message.innerHTML = '<i class="fa-solid fa-circle-check"></i> File read successfully, but this browser does not support saving directly to the file.';
+            info_message.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> File read successfully, but this browser does not support saving directly to the file. (This means you will need to manually save each snapshot. Chromium based browsers do not have this issue.)';
             info_message.style.color = 'var(--colour-warning)';
             info_message.style.display = 'block';
         } else {

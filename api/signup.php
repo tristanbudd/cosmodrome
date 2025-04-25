@@ -50,15 +50,15 @@ $_SESSION["page_title"] = get_lang("signup", $page_language);
                             <h2>Information</h2>
                             <p>Welcome to <b>Cosmodrome</b>, On our platform all data is stored locally and you are responsible for the safekeeping of your own data.</p>
                             <p>You can find out more about this on the <a href="about.php">About Page</a>.</p>
-                            <br>
+                            <div style="margin: 10px 0 10px 0;"></div> <!-- Basically a <br /> but for firefox support. -->
                             <h2>Agreements</h2>
                                 <div class="inline-input">
                                     <input type="checkbox" name="terms_agreed" id="terms_agreed" required>
                                     <label for="terms_agreed">I agree to the <a href="tos.php">Terms of Service</a><span class="required-asterisk">*</span></label>
                                 </div>
-                                <br>
+                                <div style="margin: 10px 0 10px 0;"></div>
                                 <button onclick="signup_page(1, 2)" class="form-button-b">Get Started</button>
-                            <br>
+                            <div style="margin: 10px 0 10px 0;"></div>
                             <span class="error-message" id="error_message"></span>
                             <p>Already have an account? <a href="login.php">Login Here</a></p>
                         </div>
@@ -71,14 +71,14 @@ $_SESSION["page_title"] = get_lang("signup", $page_language);
                             <h2>Your Profile</h2>
                             <div class="profile-picture-container">
                                 <div class="signup-double-input" style="justify-content: normal;">
-                                    <img src="<?php echo(get_document_path("public", true) . "/img/profile_blank.png") ?>" id="profile_picture_img" alt="Your Profile Picture" class="signup-profile-img">
+                                    <img src="<?php echo(get_document_path("public", true) . "/img/profile_blank.png") ?>" id="profile_picture_img" class="signup-profile-img">
                                     <div class="signup-double-input" style="flex-direction: column;">
                                         <button class="form-button-a" id="upload_profile_picture"><i class="fa-solid fa-upload"></i>Upload Profile Picture</button>
                                         <button class="form-button-a" id="generate_profile_picture"><i class="fa-solid fa-rotate"></i>Generate Profile Picture</button>
                                     </div>
                                 </div>
                             </div>
-                            <br>
+                            <div style="margin: 10px 0 10px 0;"></div>
                             <div class="signup-double-input">
                                 <label for="first_name" class="signup-input-label">First Name<span class="required-asterisk">*</span>
                                     <input type="text" name="first_name" id="first_name" placeholder="First Name" class="signup-input" required>
@@ -91,7 +91,7 @@ $_SESSION["page_title"] = get_lang("signup", $page_language);
                                 <button onclick="signup_page(2, 1)" class="form-button-a">Previous Page</button>
                                 <button onclick="signup_page(2, 3)" class="form-button-b">Next Page</button>
                             </div>
-                            <br>
+                            <div style="margin: 10px 0 10px 0;"></div>
                             <span class="error-message" id="error_message"></span>
                         </div>
                         <div class="signup-form-container" id="signup_page_3" style="display: none;">
@@ -132,9 +132,9 @@ $_SESSION["page_title"] = get_lang("signup", $page_language);
                             <p>This option allows you to directly access and modify your data outside of the Cosmodrome Platform and gives you full control over your data.</p>
                             <div class="warning-text"><i class="fa-solid fa-triangle-exclamation"></i>We strongly recommend against this option if you are using a shared device.</div>
                             <button class="form-button-c" id="dont_encrypt_data"><i class="fa-solid fa-triangle-exclamation"></i>Do Not Encrypt Data</button>
-                            <br>
+                            <div style="margin: 10px 0 10px 0;"></div>
                             <button onclick="signup_page(3, 2)" class="form-button-a">Previous Page</button>
-                            <br>
+                            <div style="margin: 10px 0 10px 0;"></div>
                             <span class="error-message" id="error_message"></span>
                         </div>
                         <div class="signup-form-container" id="signup_page_4" style="display: none;">
@@ -155,12 +155,12 @@ $_SESSION["page_title"] = get_lang("signup", $page_language);
                                 <button class="form-button-a" id="test_file_access" style="margin-right: 0 !important;"><i class="fa-solid fa-folder-open"></i>Test File Access</button>
                             </div>
                             <span class="info-message" id="info_message" style="display: none;"><i class="fa-solid fa-circle-info"></i> Now that you have the file downloaded, move it to a safe and rememberable place then attempt to open the file with the "Test File Access" button.</span>
-                            <br>
+                            <div style="margin: 10px 0 10px 0;"></div>
                             <div class="signup-double-button">
                                 <button onclick="signup_page(4, 3)" class="form-button-a">Previous Page</button>
                                 <input type="submit" value="Create Account" id="get_started" class="form-button-b">
                             </div>
-                            <br>
+                            <div style="margin: 10px 0 10px 0;"></div>
                             <span class="error-message" id="error_message"></span>
                         </div>
                     </div>
