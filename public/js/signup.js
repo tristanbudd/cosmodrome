@@ -25,7 +25,6 @@ function signup_page(current_page, target_page) {
     const signup_page_1 = document.getElementById('signup_page_1');
     const signup_page_2 = document.getElementById('signup_page_2');
     const signup_page_3 = document.getElementById('signup_page_3');
-    const signup_page_4 = document.getElementById('signup_page_4');
 
     hide_all_error_messages();
 
@@ -311,8 +310,8 @@ test_file_access_button.addEventListener('click', async () => {
             info_message.style.color = 'var(--colour-success)';
             info_message.style.display = 'block';
 
-        } catch (err) {
-            console.error(err);
+        } catch (error) {
+            console.error("Error | ", error);
             display_error_message('An error occurred while accessing the file.');
         }
     } else {
@@ -335,7 +334,7 @@ test_file_access_input.addEventListener('change', (event) => {
     reader.onload = function (e) {
         const content = e.target.result;
         if (content.trim() === '') {
-            info_message.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> File read successfully, but this browser does not support saving directly to the file. (This means you will need to manually save each snapshot. Chromium based browsers do not have this issue.)';
+            info_message.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> File read successfully, but this browser does not support saving directly to the file. (This means you will need to manually save each snapshot. Chromium based browsers do not have this issue)';
             info_message.style.color = 'var(--colour-warning)';
             info_message.style.display = 'block';
         } else {

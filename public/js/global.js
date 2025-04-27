@@ -190,3 +190,35 @@ header_links.forEach((link) => {
         });
     }
 });
+
+// Notification System
+function create_notification(type = 'error', message) {
+    const allowed_types = ['error', 'warning', 'success'];
+    if (!allowed_types.includes(type)) {
+        type = 'error';
+    }
+
+    const notification_box = document.getElementById('notification-box');
+
+    const notification = document.createElement('div');
+    notification.classList.add('notification', `notification-${type}`);
+
+    notification.innerHTML = `
+        <strong>${type.charAt(0).toUpperCase() + type.slice(1)}</strong>
+        <p>${message}</p>
+        <a onclick="this.parentElement.remove()">
+            <i class="fa-solid fa-xmark"></i>
+        </a>
+    `;
+
+    notification_box.appendChild(notification);
+}
+
+function clear_all_notifications() {
+    const notification_box = document.getElementById('notification-box');
+    const notifications = notification_box.querySelectorAll('.notification');
+
+    notifications.forEach((notification) => {
+        notification.remove();
+    });
+}

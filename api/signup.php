@@ -2,6 +2,7 @@
 session_start();
 
 require_once($_SERVER["DOCUMENT_ROOT"] . "/api/components/base_functions.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/api/components/notification_queue.php");
 
 $page_language = get_page_language();
 
@@ -14,6 +15,10 @@ $_SESSION["page_title"] = get_lang("signup", $page_language);
 // echo($_POST["first_name"]);
 // echo($_POST["last_name"]);
 //echo($_POST["encryption_enabled"]);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    echo "<script>queue_notification('success', 'Account Created Successfully!');</script>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -162,6 +167,13 @@ $_SESSION["page_title"] = get_lang("signup", $page_language);
                             </div>
                             <div style="margin: 10px 0 10px 0;"></div>
                             <span class="error-message" id="error_message"></span>
+                        </div>
+                        <div class="signup-form-container" id="signup_page_5" style="display: none;">
+                            <h1>Welcome to Cosmodrome!</h1>
+                            <h2>Account Created</h2>
+                            <p>Your account has been successfully created, make sure to maintain consistent saves throughout your use of the platform. You can now access your dashboard and explore the website below:</p>
+                            <div style="margin: 10px 0 10px 0;"></div>
+                            <a href="dashboard.php" class="form-button-a" style="text-decoration: none; color: var(--colour-text-primary);">Go To Dashboard</a>
                         </div>
                     </div>
                 </div>

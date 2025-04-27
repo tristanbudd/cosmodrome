@@ -508,6 +508,73 @@ button i {
     margin-bottom: 8px;
 }
 
+.notification-box {
+    position: fixed;
+    width: calc(100% - 48px);
+    margin-left: 24px;
+    margin-right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 1000;
+}
+
+.notification-box a {
+    text-decoration: none;
+}
+
+.notification {
+    padding: 16px;
+    border: 1px solid var(--colour-secondary);
+    border-left-width: 5px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.notification strong {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.notification a {
+    margin-left: auto;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification-error {
+    border-left-color: var(--colour-error);
+    background-color: rgba(226, 54, 54, 0.1);
+}
+
+.notification-error strong {
+    color: var(--colour-error);
+}
+
+.notification-success {
+    border-left-color: var(--colour-success);
+    background-color: rgba(97, 209, 97, 0.1);
+}
+
+.notification-success strong {
+    color: var(--colour-success);
+}
+
+.notification-warning {
+    border-left-color: var(--colour-warning);
+    background-color: rgba(237, 194, 94, 0.1);
+}
+
+.notification-warning strong {
+    color: var(--colour-warning);
+}
+
 /* Page Responsiveness */
 @media (min-width: 1536px) {
     .signup-form {

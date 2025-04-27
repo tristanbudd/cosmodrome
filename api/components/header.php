@@ -122,6 +122,9 @@ function create_header($data = array()) {
                 ?>
             </div>
         </header>
+
+        <div class="notification-box" id="notification-box">
+        </div>
     </nav>
     <?php
 }
