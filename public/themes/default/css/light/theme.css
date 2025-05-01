@@ -620,6 +620,66 @@ button i {
     }
 }
 
-@media (max-width: 1024px) {
-    /* Mobile & Tablet Responsiveness */
+@media (max-width: 1280px) {
+    .signup-form {
+        width: 960px;
+        height: 420px;
+    }
+
+    .signup-form-container {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        justify-content: flex-start;
+    }
+
+    #signup-form-image {
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .single-a-button {
+        margin-right: 0;
+    }
+
+    .signup-form-container img {
+        margin-left: 0;
+    }
+
+    .signup-form-container h1 {
+        font-size: 2rem;
+    }
+
+    .signup-form-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .signup-form-container p {
+        font-size: 1rem;
+    }
+
+    .signup-form-container h3 {
+        font-size: 1rem;
+    }
+
+    .warning-text {
+        font-size: 0.9rem;
+    }
+
+    .signup-form-container a {
+        font-size: 1rem;
+    }
+
+    .error_message {
+        font-size: 1rem;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+    }
 }

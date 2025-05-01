@@ -17,7 +17,33 @@ $_SESSION["page_title"] = get_lang("signup", $page_language);
 //echo($_POST["encryption_enabled"]);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    echo "<script>queue_notification('success', 'Account Created Successfully!');</script>";
+    $error_message = "";
+
+    $terms_agreed = isset($_POST["terms_agreed"]) ? $_POST["terms_agreed"] : false;
+    $first_name = isset($_POST["first_name"]) ? $_POST["first_name"] : "";
+    $last_name = isset($_POST["last_name"]) ? $_POST["last_name"] : "";
+    $encryption_enabled = isset($_POST["encryption_enabled"]) ? $_POST["encryption_enabled"] : false;
+    $password = isset($_POST["password"]) ? $_POST["password"] : "";
+    $confirm_password = isset($_POST["confirm_password"]) ? $_POST["confirm_password"] : "";
+    $profile_picture = isset($_FILES["profile_picture"]) ? $_FILES["profile_picture"] : null;
+
+    if ($terms_agreed != "on") {
+        $error_message = "You must agree to the Terms of Service!";
+    } elseif (empty($first_name) || empty($last_name)) {
+        $error_message = "First Name and Last Name are required!";
+    } elseif ($encryption_enabled == "true" && (empty($password) || empty($confirm_password))) {
+        $error_message = "Password and Confirm Password are required!";
+    } elseif ($encryption_enabled == "true" && $password !== $confirm_password) {
+        $error_message = "Passwords do not match!";
+    } elseif ($profile_picture == null) {
+        $error_message = "Profile Picture is required!";
+    }
+
+    if (!empty($error_message)) {
+        echo("<script>queue_notification('error', '$error_message');</script>");
+    } else {
+        echo("<script>queue_notification('success', 'Account Created Successfully!');</script>");
+    }
 }
 ?>
 
@@ -131,14 +157,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </ul>
                                 </div>
                             </div>
-                            <button class="form-button-a" id="encrypt_data"><i class="fa-solid fa-lock"></i>Encrypt Data</button>
+                            <button class="form-button-a single-a-button" id="encrypt_data"><i class="fa-solid fa-lock"></i>Encrypt Data</button>
                             <div class="signup-spacer"></div>
                             <h3>Option 2: No Encryption</h3>
                             <p>This option allows you to directly access and modify your data outside of the Cosmodrome Platform and gives you full control over your data.</p>
                             <div class="warning-text"><i class="fa-solid fa-triangle-exclamation"></i>We strongly recommend against this option if you are using a shared device.</div>
                             <button class="form-button-c" id="dont_encrypt_data"><i class="fa-solid fa-triangle-exclamation"></i>Do Not Encrypt Data</button>
                             <div style="margin: 10px 0 10px 0;"></div>
-                            <button onclick="signup_page(3, 2)" class="form-button-a">Previous Page</button>
+                            <button onclick="signup_page(3, 2)" class="form-button-a single-a-button">Previous Page</button>
                             <div style="margin: 10px 0 10px 0;"></div>
                             <span class="error-message" id="error_message"></span>
                         </div>
@@ -151,7 +177,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <h2>File Saving</h2>
                             <h3>Remote Saving</h3>
                             <p>Save a copy of your save file and automatically update it via third party platforms such as GitHub, Google Drive & DropBox.</p>
-                            <button class="form-button-a" disabled><i class="fa-solid fa-xmark"></i>Feature Coming Soon</button>
+                            <button class="form-button-a single-a-button" disabled><i class="fa-solid fa-xmark"></i>Feature Coming Soon</button>
                             <div class="signup-spacer"></div>
                             <h3>Local Saving<span class="required-asterisk">*</span></h3>
                             <p>Save a local copy of your data for easy access via a portable file. We recommend you place the file in a safe place you can find easily, such as your documents' folder.</p>
